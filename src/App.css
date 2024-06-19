@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+.switch {
+  width: 60px;
+  height: 34px;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  opacity: 0;
+  height: 0;
+  width: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.slider {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #ccc;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.slider::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  transition: .4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 26px;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.navbar {
+  padding: 3%;
+}
+
+.status {
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+  box-shadow: 1px 1px 10px 1px rgb(255, 0, 0);
+  transition: .4s;
+}
+
+.status.active {
+  background-color: rgb(0, 255, 0);
+  box-shadow: 1px 1px 10px 1px rgb(0, 255, 0);
+}
+
+.user {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #ff8800;
+  color: white;
+  font-weight: 800;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+
+hr {
+  margin: 0;
+  box-shadow: 1px 1px 10px 1px gray;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: "caudex", sans-serif;
+}
+
+.content {
+  padding: 3%;
+  font-family: 'Raleway', sans-serif;
+}
+
+.dashboardIcon {
+  background-color: #d97a0f;
+  color: white;
+  padding: 5%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .4s ease-in-out;
+  width: 80px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 80px;
 }
 
-.App-link {
-  color: #61dafb;
+.dashboardIcon:hover {
+  background-color: #ff8800;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.iconText {
+  
+  margin-left: 10px;
+}
+
+.iconText p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.raleWay {
+  font-family: 'Raleway', sans-serif;
+}
+
+.caudex {
+  font-family: "caudex", sans-serif;
 }
