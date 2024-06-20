@@ -16,7 +16,8 @@ input {
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: transparent;
+  border: 1px solid;
   cursor: pointer;
 }
 
@@ -27,7 +28,7 @@ input {
   background-color: white;
   position: absolute;
   left: 4px;
-  bottom: 4px;
+  bottom: 3px;
   transition: .4s;
 }
 
@@ -41,10 +42,13 @@ input {
 
 input:checked + .slider::before {
   transform: translateX(26px);
+  background-color: #d97a0f;
 }
 
 .navbar {
   padding: 3%;
+  background-color: #d97a0f;
+  color: white;
 }
 
 .status {
@@ -62,20 +66,32 @@ input:checked + .slider::before {
   box-shadow: 1px 1px 10px 1px rgb(0, 255, 0);
 }
 
+.profile {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
 .user {
   width: 40px;
   height: 40px;
   border-radius: 40px;
-  background-color: #ff8800;
-  color: white;
+  background-color: white;
   font-weight: 800;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
+  color: #d97a0f;
+  box-shadow: 1px 1px 10px 1px white;
 }
 
 hr {
   margin: 0;
-  box-shadow: 1px 1px 10px 1px gray;
+  box-shadow: 0px 2px 4px 2px #adaaaa;
+}
+
+.row {
+  width: 100%;
+  margin: auto;
 }
 
 .title {
@@ -85,8 +101,24 @@ hr {
 }
 
 .content {
-  padding: 3%;
+  padding: 5%;
   font-family: 'Raleway', sans-serif;
+  position: relative;
+}
+
+.grayOut {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: white;
+  transition: .4s ease-in-out;
+}
+
+.grayOut h1 {
+  font-weight: 700;
+
 }
 
 .dashboardIcon {
@@ -101,6 +133,7 @@ hr {
   align-items: center;
   justify-content: center;
   height: 80px;
+  box-shadow: 1px 1px 10px 1px #ccc ;
 }
 
 .dashboardIcon:hover {
@@ -108,13 +141,27 @@ hr {
 }
 
 .iconText {
-  
+  width: 70px;
   margin-left: 10px;
 }
 
 .iconText p {
   margin: 0;
   font-weight: 700;
+}
+
+.goals {
+  background-color: #d97a0f;
+  padding: 3%;
+  border-radius:10px;
+  color: white;
+  box-shadow: 1px 1px 10px 1px #ccc;
+  font-weight: 800;
+}
+
+.goals p {
+  font-size: 1.2rem;
+  width: 50%;
 }
 
 .raleWay {
