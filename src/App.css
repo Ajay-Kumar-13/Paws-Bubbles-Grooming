@@ -156,12 +156,19 @@ hr {
   border-radius:10px;
   color: white;
   box-shadow: 1px 1px 10px 1px #ccc;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .goals p {
   font-size: 1.2rem;
   /* width: 50%; */
+}
+
+.identifiers span{
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .reviews {
@@ -173,11 +180,6 @@ td {
   font-weight: 550;
 }
 
-.identifiers span{
-  height: 10px;
-  width: 10px;
-  display: inline-block;
-}
 
 .raleWay {
   font-family: 'Raleway', sans-serif;

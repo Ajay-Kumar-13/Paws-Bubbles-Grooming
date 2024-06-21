@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import "react-circular-progressbar/dist/styles.css";
 
 function Navbar() {
     const [online, setOnline] = useState(false);
@@ -14,6 +15,7 @@ function Navbar() {
     }, [online])
 
     const percentage = 66;
+
     return (
         <React.Fragment>
             <div className="navbar">
@@ -84,77 +86,22 @@ function Navbar() {
                     </div>
                 </div>
 
-                <div className="container mt-4 p-3 raleWay goals">
-                    <p className="m-0 text-center">
-                        Monthly Service Goals
-                    </p>
-                    <div className="d-flex justify-content-center mt-4 align-items-center">
-                        <div className="d-flex flex-column justify-content-center align-items-center p-2" style={{ width: 200, height: 200 }}>
-                            <CircularProgressbar
-                                value={percentage}
-                                strokeWidth={50}
-                                // text={`${percentage}%`}
-                                styles={buildStyles({
-                                    // Rotation of path and trail, in number of turns (0-1)
-                                    rotation: 0.25,
-
-                                    // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
-                                    strokeLinecap: 'butt',
-
-                                    // Text size
-                                    textSize: '16px',
-
-                                    // How long animation takes to go from one percentage to another, in seconds
-                                    pathTransitionDuration: 0.5,
-
-                                    // Can specify path transition in more detail, or remove it entirely
-                                    // pathTransition: 'none',
-
-                                    // Colors
-                                    pathColor: `rgba(62, 152, 199, ${percentage / 100})`,
-                                    textColor: '#f88',
-                                    trailColor: '#d6d6d6',
-                                    backgroundColor: '#3e98c7',
-
-                                })}
-                            />
-                            <div className="identifiers mt-2">
-                                <span style={{backgroundColor: '#d6d6d6'}}></span> Online Payment
-                                <span style={{backgroundColor: `rgba(62, 152, 199, ${percentage / 100})`}}></span> Cash on Service
-                            </div>
+                <div className="container d-flex mt-4 raleWay goals">
+                    <div className="w-50 p-2">
+                        <CircularProgressbar strokeWidth={5} value={percentage} styles={buildStyles({textColor: 'white'})} text={`${percentage}%`} />
+                        <div className="identifiers mt-2">
+                            <span style={{backgroundColor: '#3e98c7'}}></span>
+                            Online Payment
                         </div>
-                        <div className="d-flex flex-column justify-content-center align-items-center p-2" style={{ width: 200, height: 200 }}>
-                            <div style={{ position: 'absolute' }}>
-                                <h1 className="m-0 fw-bold">66%</h1>
-                            </div>
-                            <CircularProgressbar
-                                value={percentage}
-                                // text={`${percentage}%`}
-                                styles={buildStyles({
-                                    // Rotation of path and trail, in number of turns (0-1)
-                                    rotation: 0.25,
-
-                                    // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
-                                    strokeLinecap: 'butt',
-
-                                    // Text size
-                                    textSize: '16px',
-
-                                    // How long animation takes to go from one percentage to another, in seconds
-                                    pathTransitionDuration: 0.5,
-
-                                    // Can specify path transition in more detail, or remove it entirely
-                                    // pathTransition: 'none',
-
-                                    // Colors
-                                    pathColor: `rgba(62, 152, 199, ${percentage / 100})`,
-                                    textColor: '#f88',
-                                    trailColor: '#d6d6d6',
-                                    backgroundColor: '#3e98c7',
-
-                                })}
-                            />
-                            
+                        <div className="identifiers">
+                            <span style={{backgroundColor: `#d6d6d6`}}></span>
+                            Cash on Service
+                        </div>
+                    </div>
+                    <div className="w-50 p-2">
+                        <CircularProgressbar strokeWidth={50} styles={buildStyles({strokeLinecap: 'butt', textColor: '#d97a0f'})} value={percentage} text={`${percentage}%`} />
+                        <div className="mt-2">
+                            You have done {percentage}% out of 100%.
                         </div>
                     </div>
                 </div>
