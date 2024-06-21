@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 function Navbar() {
     const [online, setOnline] = useState(false);
 
     useEffect(() => {
-        if(online) {
+        if (online) {
             document.getElementById('grayOut').style.display = 'none'
         } else {
             document.getElementById('grayOut').style.display = 'block'
         }
     }, [online])
 
+    const percentage = 66;
     return (
         <React.Fragment>
             <div className="navbar">
@@ -82,11 +85,153 @@ function Navbar() {
                 </div>
 
                 <div className="container mt-5 p-3 raleWay goals">
-                    <p className="m-0">
+                    <p className="m-0 text-center">
                         Monthly Service Goals
                     </p>
+                    <div className="d-flex justify-content-center mt-4 align-items-center">
+                        <div className="d-flex justify-content-center align-items-center" style={{ width: 200, height: 200 }}>
+                            <div style={{ position: 'absolute' }}>
+                                <h1 className="m-0 fw-bold">66%</h1>
+                            </div>
+                            <CircularProgressbar
+                                value={percentage}
+                                // text={`${percentage}%`}
+                                styles={buildStyles({
+                                    // Rotation of path and trail, in number of turns (0-1)
+                                    rotation: 0.25,
+
+                                    // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                                    strokeLinecap: 'round',
+
+                                    // Text size
+                                    textSize: '16px',
+
+                                    // How long animation takes to go from one percentage to another, in seconds
+                                    pathTransitionDuration: 0.5,
+
+                                    // Can specify path transition in more detail, or remove it entirely
+                                    // pathTransition: 'none',
+
+                                    // Colors
+                                    pathColor: `rgba(62, 152, 199, ${percentage / 100})`,
+                                    textColor: '#f88',
+                                    trailColor: '#d6d6d6',
+                                    backgroundColor: '#3e98c7',
+
+                                })}
+                            />
+                        </div>
+                    </div>
                 </div>
 
+                <div className="mt-4 mb-2 roboto d-flex">
+                    <h4 className="fw-bold">Reviews</h4>
+                    <input />
+                </div>
+                <div className="reviews">
+                    <table class="table raleWay">
+                        <thead>
+                            <tr>
+                                <th scope="col">Ord No</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Ratings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Ajay</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Akhilesh</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Akhil</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Ajay</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Akhilesh</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Akhil</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Ajay</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Akhilesh</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Akhil</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Ajay</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Akhilesh</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Akhil</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Ajay</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Akhilesh</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Akhil</td>
+                                <td>Approved</td>
+                                <td>4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </React.Fragment>

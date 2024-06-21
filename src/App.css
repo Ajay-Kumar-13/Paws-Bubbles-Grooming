@@ -161,7 +161,12 @@ hr {
 
 .goals p {
   font-size: 1.2rem;
-  width: 50%;
+  /* width: 50%; */
+}
+
+.reviews {
+  max-height: 300px;
+  overflow: scroll;
 }
 
 .raleWay {
@@ -170,4 +175,8 @@ hr {
 
 .caudex {
   font-family: "caudex", sans-serif;
+}
+
+.roboto {
+  font-family: 'roboto', sans-serif;
 }
