@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import "react-circular-progressbar/dist/styles.css";
 import ChangingProgressProvider from "./changeProgressProvider";
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { onlineStatus } from "./redux/user/userActions";
+
 
 function Navbar(props) {
     const [offline, setOffline] = useState(false);
@@ -12,7 +13,7 @@ function Navbar(props) {
 
     useEffect(() => {
         console.log(props.offline);
-        if(props.offline) {
+        if (props.offline) {
             navigate('/offline')
         } else {
             document.getElementById("power").checked = true;
@@ -32,7 +33,7 @@ function Navbar(props) {
             <div className="navbar">
                 <div className="d-flex align-items-center">
                     <label class="switch">
-                        <input type="checkbox" id="power" onClick={goOnline}/>
+                        <input type="checkbox" id="power" onClick={goOnline} />
                         <span class="slider round"></span>
                     </label>
                     {/* <div className={`status ${online && 'active'}`}></div> */}
@@ -45,6 +46,11 @@ function Navbar(props) {
                         A
                     </div>
                 </div>
+            </div>
+            <hr></hr>
+            <div className="p-3 text-center roboto">
+                <i class="fa-solid fa-location-dot" style={{marginRight: '5px', color: '#d97a0f'}}></i>
+                Visakhapatnam
             </div>
             <hr></hr>
 
@@ -95,7 +101,7 @@ function Navbar(props) {
                     <div className="w-50 p-2">
                         <ChangingProgressProvider values={[0, 90]}>
                             {(percentage) => (
-                                <CircularProgressbar strokeWidth={5} value={percentage} styles={buildStyles({ textColor: 'white',  pathTransitionDuration: 1 })} text={`${percentage}%`} />
+                                <CircularProgressbar strokeWidth={8} value={percentage} styles={buildStyles({ textColor: 'white', pathTransitionDuration: 1 })} text={`${percentage}%`} />
                             )}
                         </ChangingProgressProvider>
                         <div className="identifiers mt-2">
@@ -108,9 +114,14 @@ function Navbar(props) {
                         </div>
                     </div>
                     <div className="w-50 p-2">
-                        <CircularProgressbar strokeWidth={50} styles={buildStyles({ strokeLinecap: 'butt', textColor: '#d97a0f' })} value={percentage} text={`${percentage}%`} />
+                        <ChangingProgressProvider values={[0, 66]}>
+                            {(percentage) => (
+                                <CircularProgressbar strokeWidth={50} styles={buildStyles({ strokeLinecap: 'butt', textColor: '#d97a0f' })} value={percentage} text={`${percentage}%`} />
+                            )}
+                        </ChangingProgressProvider>
+
                         <div className="mt-2">
-                            You have done {percentage}% out of 100%.
+                            You have done {percentage}% service out of 100% in this month.
                         </div>
                     </div>
                 </div>
@@ -238,7 +249,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onlineStatus: () => dispatch(onlineStatus())
-    }    
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
