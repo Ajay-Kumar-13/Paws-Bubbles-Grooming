@@ -101,7 +101,7 @@ function Navbar(props) {
                     <div className="w-50 p-2">
                         <ChangingProgressProvider values={[0, 90]}>
                             {(percentage) => (
-                                <CircularProgressbar strokeWidth={8} value={percentage} styles={buildStyles({ textColor: 'white', pathTransitionDuration: 1 })} text={`${percentage}%`} />
+                                <CircularProgressbar  strokeWidth={8} value={percentage} styles={buildStyles({ textColor: 'white', pathTransitionDuration: 1 })} text={`${percentage}%`} />
                             )}
                         </ChangingProgressProvider>
                         <div className="identifiers mt-2">
@@ -116,7 +116,7 @@ function Navbar(props) {
                     <div className="w-50 p-2">
                         <ChangingProgressProvider values={[0, 66]}>
                             {(percentage) => (
-                                <CircularProgressbar strokeWidth={50} styles={buildStyles({ strokeLinecap: 'butt', textColor: '#d97a0f' })} value={percentage} text={`${percentage}%`} />
+                                <CircularProgressbar strokeWidth={50} styles={buildStyles({ strokeLinecap: 'butt', textColor: '#d97a0f',  pathTransitionDuration: 1 })} value={percentage} text={`${percentage}%`} />
                             )}
                         </ChangingProgressProvider>
 

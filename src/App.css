@@ -190,6 +190,10 @@ td {
   width: 100%;
 }
 
+.CircularProgressbar-text {
+  font-family: "Raleway", sans-serif;
+}
+
 
 .raleWay {
   font-family: 'Raleway', sans-serif;
