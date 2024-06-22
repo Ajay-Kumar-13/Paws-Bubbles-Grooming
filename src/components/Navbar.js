@@ -1,18 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import "react-circular-progressbar/dist/styles.css";
+import ChangingProgressProvider from "./changeProgressProvider";
+import {connect} from 'react-redux';
+import { useNavigate } from "react-router-dom";
+import { onlineStatus } from "./redux/user/userActions";
 
-function Navbar() {
-    const [online, setOnline] = useState(false);
+function Navbar(props) {
+    const [offline, setOffline] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        if (online) {
-            document.getElementById('grayOut').style.display = 'none'
+        console.log(props.offline);
+        if(props.offline) {
+            navigate('/offline')
         } else {
-            document.getElementById('grayOut').style.display = 'block'
+            document.getElementById("power").checked = true;
         }
-    }, [online])
+    }, [])
+
+    const goOnline = async () => {
+        await props.onlineStatus();
+        setOffline(true);
+        navigate('/offline')
+    }
 
     const percentage = 66;
 
@@ -21,7 +32,7 @@ function Navbar() {
             <div className="navbar">
                 <div className="d-flex align-items-center">
                     <label class="switch">
-                        <input type="checkbox" onClick={() => { setOnline(!online) }} />
+                        <input type="checkbox" id="power" onClick={goOnline}/>
                         <span class="slider round"></span>
                     </label>
                     {/* <div className={`status ${online && 'active'}`}></div> */}
@@ -38,12 +49,6 @@ function Navbar() {
             <hr></hr>
 
             <div className="content">
-                <div className="grayOut" id="grayOut">
-                    <div className="container p-4">
-                        <h1>Go Online to receive clients.</h1>
-                        <p>Tap the above toogle button to go online..</p>
-                    </div>
-                </div>
                 <div className="row">
                     <div className="col-6 p-0 raleWay d-flex align-items-center">
                         <div className="dashboardIcon">
@@ -88,18 +93,22 @@ function Navbar() {
 
                 <div className="container d-flex mt-4 raleWay goals">
                     <div className="w-50 p-2">
-                        <CircularProgressbar strokeWidth={5} value={percentage} styles={buildStyles({textColor: 'white'})} text={`${percentage}%`} />
+                        <ChangingProgressProvider values={[0, 90]}>
+                            {(percentage) => (
+                                <CircularProgressbar strokeWidth={5} value={percentage} styles={buildStyles({ textColor: 'white',  pathTransitionDuration: 1 })} text={`${percentage}%`} />
+                            )}
+                        </ChangingProgressProvider>
                         <div className="identifiers mt-2">
-                            <span style={{backgroundColor: '#3e98c7'}}></span>
-                            Online Payment
+                            <span style={{ backgroundColor: '#3e98c7' }}></span>
+                            Online
                         </div>
                         <div className="identifiers">
-                            <span style={{backgroundColor: `#d6d6d6`}}></span>
-                            Cash on Service
+                            <span style={{ backgroundColor: `#d6d6d6` }}></span>
+                            Cash
                         </div>
                     </div>
                     <div className="w-50 p-2">
-                        <CircularProgressbar strokeWidth={50} styles={buildStyles({strokeLinecap: 'butt', textColor: '#d97a0f'})} value={percentage} text={`${percentage}%`} />
+                        <CircularProgressbar strokeWidth={50} styles={buildStyles({ strokeLinecap: 'butt', textColor: '#d97a0f' })} value={percentage} text={`${percentage}%`} />
                         <div className="mt-2">
                             You have done {percentage}% out of 100%.
                         </div>
@@ -220,4 +229,16 @@ function Navbar() {
     )
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+    return {
+        offline: state.offline
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onlineStatus: () => dispatch(onlineStatus())
+    }    
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
