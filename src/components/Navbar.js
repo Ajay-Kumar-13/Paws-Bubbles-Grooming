@@ -48,8 +48,8 @@ function Navbar(props) {
                 </div>
             </div>
             <hr></hr>
-            <div className="p-3 text-center roboto">
-                <i class="fa-solid fa-location-dot" style={{marginRight: '5px', color: '#d97a0f'}}></i>
+            <div className="p-3 text-center roboto location">
+                <i class="fa-solid fa-location-dot" style={{marginRight: '5px', color: '#f4765b'}}></i>
                 Visakhapatnam
             </div>
             <hr></hr>
@@ -101,11 +101,11 @@ function Navbar(props) {
                     <div className="w-50 p-2">
                         <ChangingProgressProvider values={[0, 90]}>
                             {(percentage) => (
-                                <CircularProgressbar  strokeWidth={8} value={percentage} styles={buildStyles({ textColor: 'white', pathTransitionDuration: 1 })} text={`${percentage}%`} />
+                                <CircularProgressbar strokeWidth={8} value={percentage} styles={{text: {fontFamily: ' "caudex", sans-serif', fill: 'white'}, path: {strokeLinecap: 'butt', stroke: '#fbd978'} }} text={`${percentage}%`} />
                             )}
                         </ChangingProgressProvider>
                         <div className="identifiers mt-2">
-                            <span style={{ backgroundColor: '#3e98c7' }}></span>
+                            <span style={{ backgroundColor: '#fbd978' }}></span>
                             Online
                         </div>
                         <div className="identifiers">
@@ -116,7 +116,8 @@ function Navbar(props) {
                     <div className="w-50 p-2">
                         <ChangingProgressProvider values={[0, 66]}>
                             {(percentage) => (
-                                <CircularProgressbar strokeWidth={50} styles={buildStyles({ strokeLinecap: 'butt', textColor: '#d97a0f',  pathTransitionDuration: 1 })} value={percentage} text={`${percentage}%`} />
+                                // <CircularProgressbar strokeWidth={50} styles={{text: {fontFamily: ' "caudex", sans-serif', fill: 'white'}, path: {strokeLinecap: 'butt', stroke: '#fbd978'}}} value={percentage} text={`${percentage}%`} />
+                                <CircularProgressbar strokeWidth={8} value={percentage} styles={{text: {fontFamily: ' "caudex", sans-serif', fill: 'white'}, path: {strokeLinecap: 'butt', stroke: '#fbd978'} }} text={`${percentage}%`} />
                             )}
                         </ChangingProgressProvider>
 
