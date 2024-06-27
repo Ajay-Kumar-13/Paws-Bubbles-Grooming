@@ -22,9 +22,9 @@ function Transactions() {
                     <h1><span className='balance caudex'>0</span> INR</h1>
                 </div>
 
-                <div className="mt-4 mb-2 roboto d-flex px-3">
-                    <h4 className="fw-bold">Transactions</h4>
-                    <input />
+                <div className="mt-4 mb-3 roboto d-flex px-3 align-items-center">
+                    <h4 className="fw-bold m-0">Transactions History</h4>
+                    <i class="fa fa-solid fa-filter mx-3"></i>
                 </div>
                 <div className="reviews px-3">
                     <table class="table raleWay">
