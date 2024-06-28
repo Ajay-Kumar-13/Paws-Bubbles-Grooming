@@ -23,9 +23,9 @@ function Taskbar(props) {
         } else if (tab == 'transactions') {
             navigate('/transactions')
         } else if (tab == 'notifications') {
-            navigate('notifications')
+            navigate('/notifications')
         } else if (tab == 'profile') {
-            navigate('profile')
+            navigate('/profile')
         }
         
 

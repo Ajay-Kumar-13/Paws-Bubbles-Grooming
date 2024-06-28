@@ -5,6 +5,7 @@ import Dashboard from './components/dashboard';
 import Offine from './components/offline';
 import store from './components/redux/store';
 import Transactions from './components/transactions';
+import Notifications from './components/notifications';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -19,6 +20,7 @@ function App() {
             <Route path='/' element={<Dashboard />} />
             <Route path='/offline' element={<Offine />} />
             <Route path='/transactions' element={<Transactions />}></Route>
+            <Route path='/notifications' element={<Notifications />}></Route>
           </Routes>
         </BrowserRouter>
       </Provider>

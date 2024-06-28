@@ -7,7 +7,7 @@ function Transactions() {
             <div className='transactions'>
                 <div className='greetings roboto d-flex align-items-center'>
                     <div className="profile" style={{width: 'fit-content'}}>
-                        <div className="user d-flex align-items-center justify-content-center">
+                        <div className="user d-flex align-items-center justify-content-center"  style={{boxShadow: 'none'}}>
                             A
                         </div>
                     </div>
@@ -19,10 +19,10 @@ function Transactions() {
                 {/* <hr></hr> */}
                 <div className='jumbotron px-3 py-5 roboto'>
                     <h1 className='m-0 fw-normal'>Your Balance this month:</h1>
-                    <h1><span className='balance caudex'>0</span> INR</h1>
+                    <h1><span className='balance caudex'>1,00,000</span> INR</h1>
                 </div>
 
-                <div className="mt-4 mb-3 roboto d-flex px-3 align-items-center">
+                <div className="mt-4 mb-3 roboto d-flex px-3 align-items-center justify-content-between">
                     <h4 className="fw-bold m-0">Transactions History</h4>
                     <i class="fa fa-solid fa-filter mx-3"></i>
                 </div>

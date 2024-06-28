@@ -101,11 +101,11 @@ function Navbar(props) {
                     <div className="w-50 p-2">
                         <ChangingProgressProvider values={[0, 90]}>
                             {(percentage) => (
-                                <CircularProgressbar strokeWidth={8} value={percentage} styles={{text: {fontFamily: ' "caudex", sans-serif', fill: 'white'}, path: {strokeLinecap: 'butt', stroke: '#fbd978'} }} text={`${percentage}%`} />
+                                <CircularProgressbar strokeWidth={8} value={percentage} styles={{text: {fontFamily: ' "caudex", sans-serif', fill: 'white'}, path: {strokeLinecap: 'butt', stroke: '#cbda75'} }} text={`${percentage}%`} />
                             )}
                         </ChangingProgressProvider>
                         <div className="identifiers mt-2">
-                            <span style={{ backgroundColor: '#fbd978' }}></span>
+                            <span style={{ backgroundColor: '#cbda75' }}></span>
                             Online
                         </div>
                         <div className="identifiers">
@@ -117,7 +117,7 @@ function Navbar(props) {
                         <ChangingProgressProvider values={[0, 66]}>
                             {(percentage) => (
                                 // <CircularProgressbar strokeWidth={50} styles={{text: {fontFamily: ' "caudex", sans-serif', fill: 'white'}, path: {strokeLinecap: 'butt', stroke: '#fbd978'}}} value={percentage} text={`${percentage}%`} />
-                                <CircularProgressbar strokeWidth={8} value={percentage} styles={{text: {fontFamily: ' "caudex", sans-serif', fill: 'white'}, path: {strokeLinecap: 'butt', stroke: '#fbd978'} }} text={`${percentage}%`} />
+                                <CircularProgressbar strokeWidth={8} value={percentage} styles={{text: {fontFamily: ' "caudex", sans-serif', fill: 'white'}, path: {strokeLinecap: 'butt', stroke: '#cbda75'} }} text={`${percentage}%`} />
                             )}
                         </ChangingProgressProvider>
 

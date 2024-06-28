@@ -237,6 +237,62 @@ th {
   color: black;
 }
 
+.notifications {
+  height: 100vh;
+  background-color: #faeada;
+}
+
+.notification {
+  padding: 3%;
+  font-size: 14px;
+  
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 1px gray;
+  margin: 10px 3% 10px;
+  position: relative;
+}
+
+.notification.active {
+  font-weight: bold;
+  text-shadow: 1px 1px gray;
+  background-color: #f4765b;
+  color: white;
+}
+
+.notificationsSpace {
+  max-height: 83vh;
+  overflow: scroll;
+}
+
+.notification button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
+  padding: 3%;
+  margin-right: 10px;
+  box-shadow: 1px 1px 5px 1px gray;
+}
+
+.notification button i {
+  margin-left: 10px;
+}
+
+.expired {
+  background-color: #f45b5b;
+  padding: 5%;
+  width: fit-content;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.btnGroup {
+  transition: .4s ease-in-out;
+}
 
 
 .raleWay {
