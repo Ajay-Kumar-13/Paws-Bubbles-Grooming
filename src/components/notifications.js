@@ -25,7 +25,7 @@ function Notifications() {
             <div className="notifications">
                 <div className='greetings roboto d-flex align-items-center'>
                     <div className="profile" style={{ width: 'fit-content' }}>
-                        <div className="user d-flex align-items-center justify-content-center" style={{boxShadow: 'none'}}>
+                        <div className="user d-flex align-items-center justify-content-center" style={{ boxShadow: 'none' }}>
                             A
                         </div>
                     </div>
@@ -39,18 +39,18 @@ function Notifications() {
 
                         ?
                         <div className="notificationsSpace">
-                            <Notification active={true} time={'2:40 PM'} expired={false}/>
-                            <Notification active={false} time={'9:40 AM'} expired={true}/>
-                            <Notification active={false} time={'11:40 AM'} expired={true}/>
-                            <Notification active={false} time={'11:40 AM'} expired={true}/>
-                            <Notification active={false} time={'11:40 AM'} expired={true}/>
-                            <Notification active={false} time={'11:40 AM'} expired={true}/>
-                            <Notification active={false} time={'11:40 AM'} expired={true}/>
-                            <Notification active={false} time={'11:40 AM'} expired={true}/>
-                            <Notification active={false} time={'11:40 AM'} expired={true}/>
-                            <Notification active={false} time={'11:40 AM'} expired={true}/>
-                            <Notification active={false} time={'11:40 AM'} expired={true}/>
-                            <Notification active={false} time={'11:40 AM'} expired={true}/>
+                            <Notification id={'1'} active={true} time={'2:40 PM'} expired={false} />
+                            <Notification id={'11'} active={false} time={'9:40 AM'} expired={true} />
+                            <Notification id={'112'} active={false} time={'11:40 AM'} expired={true} />
+                            <Notification id={'1123'} active={false} time={'11:40 AM'} expired={true} />
+                            <Notification id={'11234'} active={false} time={'11:40 AM'} expired={true} />
+                            <Notification id={'112345'} active={false} time={'11:40 AM'} expired={true} />
+                            <Notification id={'1123456'} active={false} time={'11:40 AM'} expired={true} />
+                            <Notification id={'11234567'} active={false} time={'11:40 AM'} expired={true} />
+                            <Notification id={'112345678'} active={false} time={'11:40 AM'} expired={true} />
+                            <Notification id={'1123456789'} active={false} time={'11:40 AM'} expired={true} />
+                            <Notification id={'11234567890'} active={false} time={'11:40 AM'} expired={true} />
+                            <Notification id={'112345678900'} active={false} time={'11:40 AM'} expired={true} />
                         </div>
                         :
 

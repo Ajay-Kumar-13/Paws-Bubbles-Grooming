@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {connect} from 'react-redux';
+import { currentNotification } from "./redux/user/userActions";
 
 function Notification(props) {
-    const [showOptions, setShowOptions] = useState(false);
-    const handleOptions = () => {
-        setShowOptions(!showOptions)
+
+    const handleOptions = async () => {
+        if (props.id == props.currentNotification) {
+            await props.dispatchCurrentNotification('')
+        } else {
+            await props.dispatchCurrentNotification(props.id);
+        }
+        
     }
     const handleAccept = () => {
         console.log("accepted");
@@ -12,35 +19,54 @@ function Notification(props) {
     const handleDecline = () => {
         console.log("rejected");
     }
+
+    useEffect(() => {
+        if(props.currentNotification == props.id) {
+            document.getElementById(props.id).style.height = '120px'
+            document.getElementById(props.id).style.opacity = 1;
+        } else {
+            document.getElementById(props.id).style.height = '0px'
+            document.getElementById(props.id).style.opacity = 0;
+        }
+    })
     return (
         <React.Fragment>
-            <div className={`${props.active ? 'notification active align-items-center roboto' : 'notification align-items-center roboto'}`} onClick={handleOptions}>
+            <div className={`${props.active ? 'notification active align-items-center roboto' : 'notification align-items-center roboto'}`}>
                 {/* <div className="dot"></div> */}
                 <div className="d-flex justify-content-between">
-                    <p>View Notification</p>
+                    <p>View Notification  <div className="view" onClick={handleOptions}><i class="fa-solid fa-chevron-down"></i></div></p>
                     <div className="d-flex align-items-end flex-column">
                         <p className="m-0">{props.time}</p>
                         {props.expired && <div className="expired">Expired</div>}
                     </div>
                 </div>
-                {
-                    showOptions
 
-                    &&
-                    <div>
-                        <p>Service: Bathing</p>
-                        <p>Location: KPHB Road</p>
-                        <div className="btnGroup d-flex">
-                            <button className="roboto fw-bold" style={{ backgroundColor: '#cbda75' }} onClick={handleAccept} disabled={props.expired}>Accept <i class="fa-solid fa-check"></i></button>
-                            <button className="roboto fw-bold" style={{ backgroundColor: '#fbd978' }} onClick={handleDecline} disabled={props.expired}>Decline <i class="fa-solid fa-xmark"></i></button>
-                        </div>
+                <div className="service" id={props.id}>
+                    <p>Service: Bathing</p>
+                    <p>Location: KPHB Road</p>
+                    <div className="btnGroup d-flex">
+                        <button className="roboto fw-bold" style={{ backgroundColor: '#cbda75' }} onClick={handleAccept} disabled={props.expired}>Accept <i class="fa-solid fa-check"></i></button>
+                        <button className="roboto fw-bold" style={{ backgroundColor: '#fbd978' }} onClick={handleDecline} disabled={props.expired}>Decline <i class="fa-solid fa-xmark"></i></button>
                     </div>
+                </div>
 
-                }
+
 
             </div>
         </React.Fragment>
     )
 }
 
-export default Notification;
+function mapStateToProps(state) {
+    return {
+        currentNotification:  state.currentNotification
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return {
+        dispatchCurrentNotification: (id) => dispatch(currentNotification(id))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Notification);
