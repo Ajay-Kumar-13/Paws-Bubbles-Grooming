@@ -47,7 +47,7 @@ function Notification(props) {
                 <div className="service" id={props.id}>
                     <p>Service: Bathing</p>
                     <p>Location: KPHB Road</p>
-                    <div className="btnGroup d-flex">
+                    <div className="d-flex">
                         <button className="roboto fw-bold" style={{ backgroundColor: '#cbda75' }} onClick={handleAccept} disabled={props.expired}>Accept <i class="fa-solid fa-check"></i></button>
                         <button className="roboto fw-bold" style={{ backgroundColor: '#fbd978' }} onClick={handleDecline} disabled={props.expired}>Decline <i class="fa-solid fa-xmark"></i></button>
                     </div>

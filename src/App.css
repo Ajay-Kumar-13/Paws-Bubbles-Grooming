@@ -344,7 +344,7 @@ th {
   left: 0;
 }
 
-.button {
+.btnGroup .button {
   border: none;
   padding: 4%;
   color: white;
