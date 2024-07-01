@@ -5,7 +5,7 @@ function AcceptService() {
     return (
         <React.Fragment>
             <div style={{ backgroundColor: '#f4765b', padding: '10% 5% ', color: 'white', height:'20vh' }}>
-                <h1 className='roboto' style={{fontWeight: 'normal', width: '90%', fontSize: '1.5rem'}}>You have successfully accepted the request.</h1>
+                <h1 className='roboto m-0' style={{fontWeight: 'normal', width: '90%', fontSize: '1.5rem', width: 'fit-content', height: 'fit-content'}}>You have successfully accepted the request.</h1>
             </div>
             <div className='acceptService'>
                 {/* <p className='fw-medium'>Request No: 1234-5678-9002</p> */}
