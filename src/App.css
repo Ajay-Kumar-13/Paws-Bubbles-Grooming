@@ -311,8 +311,56 @@ th {
   opacity: 0;
 }
 
+.acceptService {
+  padding: 6%;
+  background-color: #faeada;
+  height: 80vh;
+  position: relative;
+}
+
+.inputs input {
+  opacity: 1;
+  height: 30px;
+  width: 30px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: #D9D9D9;
+  text-align: center;
+  font-family: 'roboto', sans-serif;
+  font-weight: bold;
+  color: rgb(113, 113, 113);
+  box-shadow: 0px 0px 5px 2px rgb(203, 203, 203);
+}
+
+.inputs input:focus {
+  outline: none;
+}
+
+.btnGroup {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.button {
+  border: none;
+  padding: 4%;
+  color: white;
+  font-weight: 600;
+}
 
 
+.cancelBtn {
+  width: 50%;
+  background-color: #FA6666;
+}
+
+.delayBtn {
+  width: 50%;
+  background-color: #FCC25D;
+}
 
 .raleWay {
   font-family: 'Raleway', sans-serif;

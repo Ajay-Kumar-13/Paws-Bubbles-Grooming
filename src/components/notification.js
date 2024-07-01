@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import {connect} from 'react-redux';
 import { currentNotification } from "./redux/user/userActions";
+import {useNavigate} from 'react-router-dom';
 
 function Notification(props) {
+
+    const navigate = useNavigate();
 
     const handleOptions = async () => {
         if (props.id == props.currentNotification) {
@@ -13,7 +16,7 @@ function Notification(props) {
         
     }
     const handleAccept = () => {
-        console.log("accepted");
+        navigate('/acceptService')
     }
 
     const handleDecline = () => {
