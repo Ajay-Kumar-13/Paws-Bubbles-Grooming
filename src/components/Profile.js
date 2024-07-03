@@ -62,7 +62,7 @@ function Profile() {
                             <button className='claim'>Claim!</button>
                         </div>
                     </div>
-                    <div className='password form-group roboto mt-3'>
+                    <div className='password form-group roboto mt-3 mb-5'>
                         <label for="currentPassword" className='fw-medium'>Change Password</label>
                         <div className='d-flex input mt-1'>
                             <input className='form-control' type='password' placeholder='Current Password' id='currentPassword'></input>
