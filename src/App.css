@@ -365,6 +365,7 @@ th {
 .password .input input {
   background-color: transparent;
   padding: 0;
+  border: none;
 }
 
 .password .input input:focus {
