@@ -1,4 +1,5 @@
 import React from 'react';
+import Taskbar from './taskbar';
 
 function Profile() {
     return (
@@ -71,6 +72,7 @@ function Profile() {
                     </div>
                 </div>
             </div>
+            <Taskbar tab='profile'/>
         </React.Fragment>
     )
 }
