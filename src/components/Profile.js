@@ -48,7 +48,7 @@ function Profile() {
                                 Claim Insurance For Your Machine
                             </div>
                         </div>
-                        <div className='conditions mt-2 px-2' style={{ paddingBottom: '10px' }}>
+                        <div className='conditions mt-2 px-2' >
                             <ul className='text-white'>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</li>
                                 <li>incididunt ut labore et dolore magna aliqua.</li>
@@ -57,7 +57,9 @@ function Profile() {
                                 <li>Quis ipsum suspendisse ultrices gravida dictum fusce.</li>
                             </ul>
                         </div>
-
+                        <div className='text-center'>
+                            <button className='claim'>Claim!</button>
+                        </div>
                     </div>
                     <div className='password form-group roboto mt-3'>
                         <label for="currentPassword" className='fw-medium'>Change Password</label>
