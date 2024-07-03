@@ -7,6 +7,7 @@ import store from './components/redux/store';
 import Transactions from './components/transactions';
 import Notifications from './components/notifications';
 import AcceptService from './components/AcceptService';
+import Profile from './components/Profile';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -23,6 +24,7 @@ function App() {
             <Route path='/transactions' element={<Transactions />}></Route>
             <Route path='/notifications' element={<Notifications />}></Route>
             <Route path='/acceptService' element={<AcceptService />}></Route>
+            <Route path='/profile' element={<Profile />}></Route>
           </Routes>
         </BrowserRouter>
       </Provider>
