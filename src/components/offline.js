@@ -11,7 +11,7 @@ function Offine(props) {
     
     const goOnline = async () => {
         await props.onlineStatus();
-        navigate('/')
+        navigate('/dashboard')
     }
 
     return (
