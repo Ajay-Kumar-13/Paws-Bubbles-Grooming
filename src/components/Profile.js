@@ -5,7 +5,7 @@ function Profile() {
     return (
         <React.Fragment>
             <div  style={{ backgroundColor: '#faeada', height: '100vh', overflow: 'scroll' }}>
-                <div className='greetings roboto d-flex align-items-center'>
+                <div className='greetings roboto d-flex align-items-center' style={{position: 'fixed', width: '100%'}}>
                     <div className="profile" style={{ width: 'fit-content' }}>
                         <div className="user d-flex align-items-center justify-content-center" style={{ boxShadow: 'none' }}>
                             A
@@ -16,7 +16,7 @@ function Profile() {
                         <h6 className='m-0'>Ajay kumar</h6>
                     </div>
                 </div>
-                <div className='p-3'>
+                <div className='p-3' style={{marginTop: '4rem'}}>
                     <div className='roboto'>
                         <input type='checkbox' id='online24-7'></input>
                         <label for='online24-7' className='fw-medium' style={{ marginLeft: '8px' }}>Mark as online 24/7</label>
@@ -26,7 +26,7 @@ function Profile() {
                             <div className='fw-medium fs-3'>
                                 Account Details
                             </div>
-                            <button className='btn btn-outline-dark py-1'>Update</button>
+                            {/* <button className='btn btn-outline-dark py-1'>Update</button> */}
                         </div>
                         <form className='mt-2'>
                             <div class="row roboto">
@@ -62,13 +62,21 @@ function Profile() {
                             <button className='claim'>Claim!</button>
                         </div>
                     </div>
-                    <div className='password form-group roboto mt-3 mb-5'>
-                        <label for="currentPassword" className='fw-medium'>Change Password</label>
+                    <div className='password form-group roboto mt-3'>
+                        <label for="currentPassword" className='fw-medium fs-3 mb-2'>Change Password</label>
                         <div className='d-flex input mt-1'>
                             <input className='form-control' type='password' placeholder='Current Password' id='currentPassword'></input>
                             <img src='/assests/Images/EyeHide.png' />
                         </div>
                         {/* <button className='btn btn-lg btn-block btn-outline-dark py-1 mt-2'>Verify</button> */}
+                    </div>
+                    <div className='signOut roboto mt-3'>
+                        <div className='fs-3 fw-medium mb-2'>Signout</div>
+                        <a className='text-danger' style={{textDecoration: 'none'}}>Logout</a>
+                    </div>
+                    <div className='signOut roboto mt-3 mb-5'>
+                        <div className='fs-3 fw-medium mb-2'>For Queries</div>
+                        <a className='text-danger' style={{textDecoration: 'none'}}>Contact Us</a>
                     </div>
                 </div>
             </div>

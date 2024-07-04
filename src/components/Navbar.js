@@ -129,7 +129,7 @@ function Navbar(props) {
 
                 <div className="mt-4 mb-2 roboto d-flex">
                     <h4 className="fw-bold">Reviews</h4>
-                    <input />
+                    {/* <input /> */}
                 </div>
                 <div className="reviews">
                     <table class="table raleWay">
