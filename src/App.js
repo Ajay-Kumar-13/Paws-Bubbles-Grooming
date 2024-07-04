@@ -27,7 +27,7 @@ function App() {
             <Route path='/notifications' element={<Notifications />}></Route>
             <Route path='/acceptService' element={<AcceptService />}></Route>
             <Route path='/profile' element={<Profile />}></Route>
-            {/* <Route path='/banner' element={<Banner />}></Route> */}
+            <Route path='/banner' element={<Banner />}></Route>
           </Routes>
         </BrowserRouter>
       </Provider>
