@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 function Banner() {
     const navigate = useNavigate();
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         navigate('/dashboard')
-    //     }, 3000)
-    // }, [])
+    useEffect(() => {
+        setTimeout(() => {
+            navigate('/dashboard')
+        }, 3000)
+    }, [])
     return (
         <React.Fragment>
             <div className="banner lemon d-flex flex-column align-items-center justify-content-center">
